@@ -29,6 +29,7 @@ class Bundle(models.Model):
 
 class File(models.Model):
     file_id = models.AutoField(primary_key=True)
+    bundle_id = models.ForeignKey(Bundle,on_delete=models.CASCADE,db_column='bundle_id')
     name = models.CharField(max_length=128,null=True,blank=True)
     description = models.CharField(max_length=16384,null=True,blank=True)
     url = models.CharField(max_length=1024)
