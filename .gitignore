@@ -1,8 +1,7 @@
 .dist/
-__pycache__
+__pycache__/
 
-api/sandbox/testcases/*.txt
-runner.py
+*.sqlite3
 
 env/
 .env
