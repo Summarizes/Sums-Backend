@@ -24,7 +24,7 @@
 |5. Payment
 |ดูประวัติการซื้อ|**GET**|`/payments/:payment_id`
 |ดูประวัติการซื้อทั้งหมดของ Account|**GET**|`/accounts/:account_id/payments`
-|สั่งซื้อ Bundle|**POST**|`/accounts/:account_id/payments`
+|สั่งซื้อ Bundle|**POST**|`/accounts/:account_id/payments/:bundle_id`
 # Account
 ## **`POST`** สร้าง Account  
 `/accounts`  
