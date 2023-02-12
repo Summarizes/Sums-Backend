@@ -3,7 +3,6 @@ from rest_framework.decorators import api_view,parser_classes
 from ..constants import GET,POST,PUT,DELETE
 from ..models import *
 from rest_framework import status
-from django.forms.models import model_to_dict
 from ..serializers import PaymentMethodSerializer
 from rest_framework.parsers import MultiPartParser, FormParser
 
