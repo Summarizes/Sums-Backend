@@ -1,8 +1,12 @@
 .dist/
 __pycache__/
-media/
+
 
 *.sqlite3
+*.pdf
+*.png
+*.jpeg
+*.jpg
 
 env/
 .env
