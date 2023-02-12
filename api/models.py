@@ -7,6 +7,7 @@ class Account(models.Model):
     password = models.CharField(max_length=128)
     firstname = models.CharField(max_length=64)
     lastname = models.CharField(max_length=64)
+    profile_picture = models.ImageField(upload_to='profile/',null=True,blank=True)
 
 class PaymentMethod(models.Model):
     payment_method_id = models.AutoField(primary_key=True)
