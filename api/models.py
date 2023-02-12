@@ -10,11 +10,10 @@ class Account(models.Model):
     profile_picture = models.ImageField(upload_to='profile/',null=True,blank=True)
 
 class PaymentMethod(models.Model):
-    payment_method_id = models.AutoField(primary_key=True)
-    account_id = models.ForeignKey(Account,on_delete=models.CASCADE)
+    account_id = models.OneToOneField(Account,on_delete=models.CASCADE,primary_key=True,db_column='account_id')
     citizen_id = models.CharField(max_length=128,unique=True)
     bank = models.CharField(max_length=32)
-    qr_code = models.CharField(max_length=1000)
+    qr_code = models.ImageField(upload_to='payment_qr/')
 
 class Subject(models.Model):
     subject_id = models.CharField(max_length=10,primary_key=True)
