@@ -11,7 +11,9 @@ from rest_framework.parsers import MultiPartParser, FormParser
 def create_account(request):
     serializer = AccountSerializer(data=request.data)
     if serializer.is_valid():
-        serializer.save()
+        account_instance = serializer.save()
+        access = AccountToken(account_id=account_instance)
+        access.save()
         return Response(serializer.data,status=status.HTTP_201_CREATED)
     else:
         return Response(serializer.error_messages,status=status.HTTP_400_BAD_REQUEST)

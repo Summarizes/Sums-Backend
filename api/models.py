@@ -45,3 +45,8 @@ class BundlePayment(models.Model):
     payment_id = models.ForeignKey(Payment,on_delete=models.CASCADE,db_column='payment_id')
     bundle_id = models.ForeignKey(Bundle,on_delete=models.CASCADE,db_column='bundle_id')
     price_thb = models.FloatField()
+
+class AccountToken(models.Model):
+    account_id = models.OneToOneField(Account,on_delete=models.CASCADE,primary_key=True,db_column='account_id')
+    token = models.CharField(max_length=128,null=True,blank=True)
+    expire_timestamp = models.IntegerField(null=True,blank=True)
